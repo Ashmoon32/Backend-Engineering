@@ -8,7 +8,7 @@ if (isset($_POST['register_btn'])) {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    if (empty($full_name) || empty($email) || empty($passwrod)) {
+    if (empty($full_name) || empty($email) || empty($password)) {
         die("Please fill all fields");
     }
 
