@@ -1,8 +1,11 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once "../config/db.php";
 
-if (isset($_POST['add-package-btn'])) {
+if (isset($_POST['add_package_btn'])) {
     $title = $_POST['title'];
     $price = $_POST['price'];
     $transport = $_POST['transport'];
@@ -15,12 +18,12 @@ if (isset($_POST['add-package-btn'])) {
 
         try {
             $sql = "INSERT INTO packages (title, price, transport_type, image_path) VALUES (:title, :price, :transport, :image)";
-            $stme = $pdo->prepare($sql);
+            $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 "title" => $title,
                 "price" => $price,
                 "transport" => $transport,
-                "img" => $image_name
+                "image" => $image_name
             ]);
 
             echo "Package Added Successfully!";
