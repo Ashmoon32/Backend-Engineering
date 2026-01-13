@@ -17,7 +17,7 @@ $packages = $stmt->fetchAll();
     <title>Explore Destination | Travel Agency</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .package=card img {
+        .package-card img {
             height: 200px;
             object-fit: cover;
         }
@@ -57,7 +57,7 @@ $packages = $stmt->fetchAll();
                             <p class="text-muted">Transport: <?php echo $package['transport_type']; ?></p>
                             <h4 class="text-primary">$<?php echo number_format($package['price'], 2); ?></h4>
 
-                            <a href="book_now.php?id=<?php echo $package['id']; ?>"
+                            <a href="package-details.php?id=<?php echo $package['id']; ?>"
                                 class="btn btn-outline-primary w-100 mt-2">
                                 Book Now
                             </a>
